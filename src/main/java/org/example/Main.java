@@ -32,48 +32,48 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    MovieInformation();
+                    Movies.MovieInformation(movies, actors, directors, sc);
                     break;
-                case 2:
-                    Top10RatedMovies(scanner);
-                    break;
-                case 3:
-                    MoviesbyGenre(scanner);
-                    break;
-                case 4:
-                    MoviesbyDirector(scanner);
-                    break;
-                case 5:
-                    MoviesbyReleaseYear(scanner);
-                    break;
-                case 6:
-                    Moviesbyreleaseyearrange(scanner);
-                    break;
-                case 7:
-                    AddaNewMovie(scanner);
-                    break;
-                case 8:
-                    UpdateMovieRating(scanner);
-                    break;
-                case 9:
-                    DeleteaMovie(scanner);
-                    break;
-                case 10:
-                    moviesbythereleaseyear(scanner);
-                    break;
-                case 11:
-                    DirectorswiththeMostMovies(scanner);
-                    break;
-                case 12:
-                    WorkedinMultipleMovies(scanner);
-                    break;
-                case 13:
-                    Actorwhoistheyoungest(scanner);
-                    break;
-                case 14:
-                    System.out.println("Exiting program.");
-                    scanner.close();
-                    System.exit(0);
+//                case 2:
+//                    Top10RatedMovies(scanner);
+//                    break;
+//                case 3:
+//                    MoviesbyGenre(scanner);
+//                    break;
+//                case 4:
+//                    MoviesbyDirector(scanner);
+//                    break;
+//                case 5:
+//                    MoviesbyReleaseYear(scanner);
+//                    break;
+//                case 6:
+//                    Moviesbyreleaseyearrange(scanner);
+//                    break;
+//                case 7:
+//                    AddaNewMovie(scanner);
+//                    break;
+//                case 8:
+//                    UpdateMovieRating(scanner);
+//                    break;
+//                case 9:
+//                    DeleteaMovie(scanner);
+//                    break;
+//                case 10:
+//                    moviesbythereleaseyear(scanner);
+//                    break;
+//                case 11:
+//                    DirectorswiththeMostMovies(scanner);
+//                    break;
+//                case 12:
+//                    WorkedinMultipleMovies(scanner);
+//                    break;
+//                case 13:
+//                    Actorwhoistheyoungest(scanner);
+//                    break;
+//                case 14:
+//                    System.out.println("Exiting program.");
+//                    scanner.close();
+//                    System.exit(0);
                 default:
                     System.out.println("Invalid option.");
             }

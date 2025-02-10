@@ -31,6 +31,29 @@ class Movies {
                 " mins, Director ID: " + directorid + ", Actor IDs: " + actorids;
     }
 
+    public static void MovieInformation(HashMap<Integer, Movies> movies, HashMap<Integer, Actors> actors, HashMap<Integer, Directors> directors, Scanner scanner) {
+        System.out.print("Enter Movie ID or Title: ");
+        String input = scanner.nextLine().trim();
+        for (Movies movie : movies.values()) {
+            if (String.valueOf(movie.movieid).equals(input) || movie.title.equalsIgnoreCase(input)) {
+                System.out.println("\nMovie Details:\n" + movie);
+                Directors director = directors.get(movie.directorid);
+                if (director != null) {
+                    System.out.println("Directed by: " + director.name);
+                }
+                System.out.println("Actors:");
+                for (int actorId : movie.actorids) {
+                    Actors actor = actors.get(actorId);
+                    if (actor != null) {
+                        System.out.println(actor.name);
+                    }
+                }
+                return;
+            }
+        }
+        System.out.println("Movie not found");
+    }
+
     public static HashMap<Integer, Movies> readMoviesCsv(String fileName) {
         HashMap<Integer, Movies> movieMap = new HashMap<>();
         InputStream inputStream = Movies.class.getClassLoader().getResourceAsStream(fileName);
