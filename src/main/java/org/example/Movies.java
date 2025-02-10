@@ -136,6 +136,33 @@ class Movies {
         }
     }
 
+    public static void AddNewMovie(HashMap<Integer, Movies> movies,Scanner sc){
+        System.out.print("\nEnter Movie ID: \n");
+        int movieId = sc.nextInt();
+        System.out.print("\nEnter Title:\n ");
+        String title = sc.nextLine();
+        System.out.print("\nEnter Release Year:\n ");
+        int releaseYear = sc.nextInt();
+        System.out.print("\nEnter Genre:\n ");
+        String genre = sc.nextLine();
+        System.out.print("\nEnter Rating:\n ");
+        double rating = sc.nextDouble();
+        System.out.print("\nEnter Duration:\n ");
+        int duration = sc.nextInt();
+        System.out.print("\nEnter Director ID:\n ");
+        int directorId = sc.nextInt();
+        System.out.print("\nEnter Actor IDs:\n ");
+        String actorInput = sc.nextLine();
+        List<Integer> actorIds = new ArrayList<>();
+        String[] actorArray = actorInput.split(",");
+        for (String actor : actorArray) {
+            actorIds.add(Integer.parseInt(actor.trim()));
+        }
+        Movies newMovie = new Movies(movieId, title, releaseYear, genre, rating, duration, directorId, actorIds);
+        movies.put(movieId, newMovie);
+        System.out.println("Movie added successfully");
+    }
+
     public static HashMap<Integer, Movies> readMoviesCsv(String fileName) {
         HashMap<Integer, Movies> movieMap = new HashMap<>();
         InputStream inputStream = Movies.class.getClassLoader().getResourceAsStream(fileName);

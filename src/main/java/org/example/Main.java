@@ -49,9 +49,9 @@ public class Main {
                 case 6:
                     Movies.Moviesbyrange(movies,sc);
                     break;
-//                case 7:
-//                    AddaNewMovie(scanner);
-//                    break;
+                case 7:
+                    Movies.AddNewMovie(movies,sc);
+                    break;
 //                case 8:
 //                    UpdateMovieRating(scanner);
 //                    break;
