@@ -52,9 +52,9 @@ public class Main {
                 case 7:
                     Movies.AddNewMovie(movies,sc);
                     break;
-//                case 8:
-//                    UpdateMovieRating(scanner);
-//                    break;
+                case 8:
+                    Movies.UpdateMovieRating(movies,sc);
+                    break;
 //                case 9:
 //                    DeleteaMovie(scanner);
 //                    break;

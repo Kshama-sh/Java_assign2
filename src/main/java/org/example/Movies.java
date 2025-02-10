@@ -162,6 +162,15 @@ class Movies {
         movies.put(movieId, newMovie);
         System.out.println("Movie added successfully");
     }
+    public static void UpdateMovieRating(HashMap<Integer, Movies> movies,Scanner sc){
+        System.out.println("\nEnter movie id: ");
+        int movieId=sc.nextInt();
+        System.out.println("\nEnter updated rating: ");
+        double newrating=sc.nextDouble();
+        Movies movie = movies.get(movieId);
+        movie.rating = newrating;
+        System.out.println("\nMovie rating updated");
+    }
 
     public static HashMap<Integer, Movies> readMoviesCsv(String fileName) {
         HashMap<Integer, Movies> movieMap = new HashMap<>();
