@@ -103,6 +103,20 @@ class Movies {
         }
     }
 
+    public static void MoviesbyReleaseYear(HashMap<Integer, Movies> movies,Scanner sc){
+        System.out.print("Enter Release year: ");
+        int year = sc.nextInt();
+        boolean found = false;
+        for (Movies movie : movies.values()) {
+            if (movie.releaseyear == year) {
+                System.out.println(movie);
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("No movies found");
+        }
+    }
     public static HashMap<Integer, Movies> readMoviesCsv(String fileName) {
         HashMap<Integer, Movies> movieMap = new HashMap<>();
         InputStream inputStream = Movies.class.getClassLoader().getResourceAsStream(fileName);

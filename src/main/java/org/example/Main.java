@@ -43,9 +43,9 @@ public class Main {
                 case 4:
                     Movies.MoviesbyDirector(movies,directors,sc);
                     break;
-//                case 5:
-//                    MoviesbyReleaseYear(scanner);
-//                    break;
+                case 5:
+                    Movies.MoviesbyReleaseYear(movies, sc);
+                    break;
 //                case 6:
 //                    Moviesbyreleaseyearrange(scanner);
 //                    break;
