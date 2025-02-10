@@ -191,6 +191,25 @@ class Movies {
             System.out.println(movieList.get(i));
         }
     }
+
+    public static void DirectorswiththeMostMovies(HashMap<Integer, Movies> movies,HashMap<Integer, Directors> directors){
+        HashMap<Integer, Integer> directorMovieCount = new HashMap<>();
+        for (Movies movie : movies.values()) {
+            int directorId = movie.directorid;
+            directorMovieCount.put(directorId, directorMovieCount.getOrDefault(directorId, 0) + 1);
+            List<Map.Entry<Integer, Integer>> sortedList = new ArrayList<>(directorMovieCount.entrySet());
+            sortedList.sort((a, b) -> b.getValue() - a.getValue());
+            System.out.println("\nTop 5 Directors with Most Movies:");
+            int count = 0;
+            for (Map.Entry<Integer, Integer> entry : sortedList) {
+                if (directors.containsKey(directorId)) {
+                    System.out.println(directors.get(directorId).name + " - " + entry.getValue() + " movies");
+                    count++;
+                    if (count == 5) break;
+                }
+            }
+        }
+    }
     public static HashMap<Integer, Movies> readMoviesCsv(String fileName) {
         HashMap<Integer, Movies> movieMap = new HashMap<>();
         InputStream inputStream = Movies.class.getClassLoader().getResourceAsStream(fileName);

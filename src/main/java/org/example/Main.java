@@ -61,9 +61,9 @@ public class Main {
                 case 10:
                     Movies.moviesbyreleaseyear(movies);
                     break;
-//                case 11:
-//                    DirectorswiththeMostMovies(scanner);
-//                    break;
+                case 11:
+                    Movies.DirectorswiththeMostMovies(movies,directors);
+                    break;
 //                case 12:
 //                    WorkedinMultipleMovies(scanner);
 //                    break;
