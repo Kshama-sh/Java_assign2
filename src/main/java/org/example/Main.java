@@ -1,0 +1,82 @@
+package org.example;
+import java.util.*;
+import java.util.HashMap;
+
+public class Main {
+    public static void main(String[] args) {
+        HashMap<Integer, Actors> actors = Actors.readActorsCsv("actors_large.csv");
+        HashMap<Integer, Directors> directors = Directors.readDirectorsCsv("directors_large.csv");
+        HashMap<Integer, Movies> movies = Movies.readMoviesCsv("movies_large.csv");
+
+        while (true) {
+            System.out.println("\n===== Movie Database Menu =====");
+            System.out.println("\n1. Get Movie Information");
+            System.out.println("\n2. Get Top 10 Rated Movies");
+            System.out.println("\n3. Get Movies by Genre");
+            System.out.println("\n4. Get Movies by Director");
+            System.out.println("\n5. Get Movies by Release Year");
+            System.out.println("\n6. Get Movies by release year range");
+            System.out.println("\n7. Add a New Movie");
+            System.out.println("\n8. Update Movie Rating");
+            System.out.println("\n9. Delete a Movie");
+            System.out.println("\n10. Sort and return 15 movies by the release year");
+            System.out.println("\n11. Get Directors with the Most Movies");
+            System.out.println("\n12. Get Actor Who Have Worked in Multiple Movies");
+            System.out.println("\n13. Get the movies of the actor who is the youngest as of 10-02-2025");
+            System.out.println("\n14. Exit");
+            System.out.print("\nChoose an option: ");
+
+            Scanner sc=new Scanner(System.in);
+            int choice = sc.nextInt();
+            sc.nextLine();
+
+            switch (choice) {
+                case 1:
+                    MovieInformation();
+                    break;
+                case 2:
+                    Top10RatedMovies(scanner);
+                    break;
+                case 3:
+                    MoviesbyGenre(scanner);
+                    break;
+                case 4:
+                    MoviesbyDirector(scanner);
+                    break;
+                case 5:
+                    MoviesbyReleaseYear(scanner);
+                    break;
+                case 6:
+                    Moviesbyreleaseyearrange(scanner);
+                    break;
+                case 7:
+                    AddaNewMovie(scanner);
+                    break;
+                case 8:
+                    UpdateMovieRating(scanner);
+                    break;
+                case 9:
+                    DeleteaMovie(scanner);
+                    break;
+                case 10:
+                    moviesbythereleaseyear(scanner);
+                    break;
+                case 11:
+                    DirectorswiththeMostMovies(scanner);
+                    break;
+                case 12:
+                    WorkedinMultipleMovies(scanner);
+                    break;
+                case 13:
+                    Actorwhoistheyoungest(scanner);
+                    break;
+                case 14:
+                    System.out.println("Exiting program.");
+                    scanner.close();
+                    System.exit(0);
+                default:
+                    System.out.println("Invalid option.");
+            }
+        }
+    }
+}
