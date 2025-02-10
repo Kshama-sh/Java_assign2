@@ -58,9 +58,9 @@ public class Main {
                 case 9:
                     Movies.DeleteMovie(movies,sc);
                     break;
-//                case 10:
-//                    moviesbythereleaseyear(scanner);
-//                    break;
+                case 10:
+                    Movies.moviesbyreleaseyear(movies);
+                    break;
 //                case 11:
 //                    DirectorswiththeMostMovies(scanner);
 //                    break;

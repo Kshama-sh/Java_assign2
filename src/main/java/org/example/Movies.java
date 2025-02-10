@@ -182,6 +182,15 @@ class Movies {
             System.out.println("\nMovie not found");
         }
     }
+
+    public static void moviesbyreleaseyear(HashMap<Integer, Movies> movies){
+        List<Movies> movieList = new ArrayList<>(movies.values());
+        Collections.sort(movieList, (m1, m2) -> m1.releaseyear - m2.releaseyear);
+        System.out.println("\nTop 15 Movies Sorted by Release Year:");
+        for (int i = 0; i < Math.min(15, movieList.size()); i++) {
+            System.out.println(movieList.get(i));
+        }
+    }
     public static HashMap<Integer, Movies> readMoviesCsv(String fileName) {
         HashMap<Integer, Movies> movieMap = new HashMap<>();
         InputStream inputStream = Movies.class.getClassLoader().getResourceAsStream(fileName);
