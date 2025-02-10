@@ -54,6 +54,15 @@ class Movies {
         System.out.println("Movie not found");
     }
 
+    public static void Top10RatedMovies(HashMap<Integer, Movies> movies){
+        System.out.println("\nTop 10 Rated Movies:");
+        List<Movies> movieList = new ArrayList<>(movies.values());
+        Collections.sort(movieList, (m1, m2) -> Double.compare(m2.rating, m1.rating));
+        for (int i = 0; i < Math.min(10, movieList.size()); i++) {
+            System.out.println(movieList.get(i));
+        }
+    }
+
     public static HashMap<Integer, Movies> readMoviesCsv(String fileName) {
         HashMap<Integer, Movies> movieMap = new HashMap<>();
         InputStream inputStream = Movies.class.getClassLoader().getResourceAsStream(fileName);
