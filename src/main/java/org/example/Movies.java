@@ -63,6 +63,23 @@ class Movies {
         }
     }
 
+    public static void MoviesbyGenre(HashMap<Integer, Movies> movies){
+        System.out.print("Enter Genre: ");
+        Scanner sc=new Scanner(System.in);
+        boolean found = false;
+        String genre = sc.nextLine();
+        for (Movies movie : movies.values()) {
+            if (movie.genre.equalsIgnoreCase(genre)) {
+                System.out.println(movie);
+                found = true;
+            }
+        }
+        System.out.println("\nMovies in Genre: " + genre);
+        if (!found) {
+            System.out.println("No movies found in this genre.");
+        }
+    }
+
     public static HashMap<Integer, Movies> readMoviesCsv(String fileName) {
         HashMap<Integer, Movies> movieMap = new HashMap<>();
         InputStream inputStream = Movies.class.getClassLoader().getResourceAsStream(fileName);

@@ -37,9 +37,9 @@ public class Main {
                 case 2:
                     Movies.Top10RatedMovies(movies);
                     break;
-//                case 3:
-//                    MoviesbyGenre(scanner);
-//                    break;
+                case 3:
+                    Movies.MoviesbyGenre(movies);
+                    break;
 //                case 4:
 //                    MoviesbyDirector(scanner);
 //                    break;
