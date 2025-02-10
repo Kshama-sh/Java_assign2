@@ -46,9 +46,9 @@ public class Main {
                 case 5:
                     Movies.MoviesbyReleaseYear(movies, sc);
                     break;
-//                case 6:
-//                    Moviesbyreleaseyearrange(scanner);
-//                    break;
+                case 6:
+                    Movies.Moviesbyrange(movies,sc);
+                    break;
 //                case 7:
 //                    AddaNewMovie(scanner);
 //                    break;

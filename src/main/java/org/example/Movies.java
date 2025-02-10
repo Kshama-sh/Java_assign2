@@ -117,6 +117,25 @@ class Movies {
             System.out.println("No movies found");
         }
     }
+
+    public static void Moviesbyrange(HashMap<Integer, Movies> movies,Scanner sc){
+        System.out.print("Enter Start Year: ");
+        int startYear = sc.nextInt();
+        System.out.print("Enter End Year: ");
+        int endYear = sc.nextInt();
+        sc.nextLine(); // Consume newline left-over
+        boolean found = false;
+        for (Movies movie : movies.values()) {
+            if (movie.releaseyear >= startYear && movie.releaseyear <= endYear) {
+                System.out.println(movie);
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("No movies found in the given release year range.");
+        }
+    }
+
     public static HashMap<Integer, Movies> readMoviesCsv(String fileName) {
         HashMap<Integer, Movies> movieMap = new HashMap<>();
         InputStream inputStream = Movies.class.getClassLoader().getResourceAsStream(fileName);
