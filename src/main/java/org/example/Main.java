@@ -64,12 +64,12 @@ public class Main {
                 case 11:
                     Movies.DirectorswiththeMostMovies(movies,directors);
                     break;
-//                case 12:
-//                    WorkedinMultipleMovies(scanner);
-//                    break;
-//                case 13:
-//                    Actorwhoistheyoungest(scanner);
-//                    break;
+                case 12:
+                    Movies.WorkedinMultipleMovies(movies,actors);
+                    break;
+                case 13:
+                    Movies.Actorwhoistheyoungest(movies,actors);
+                    break;
                 case 14:
                     System.out.println("Exiting program.");
                     sc.close();

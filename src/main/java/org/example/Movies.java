@@ -210,6 +210,55 @@ class Movies {
             }
         }
     }
+
+    public static void WorkedinMultipleMovies(HashMap<Integer, Movies> movies, HashMap<Integer, Actors> actors){
+        HashMap<Integer, Integer> actorCount = new HashMap<>();
+        for (Movies movie : movies.values()) {
+            for (int actorId : movie.actorids) {
+                actorCount.put(actorId, actorCount.getOrDefault(actorId, 0) + 1);
+            }
+        }
+        int maxMovies = 0;
+        int topActorId = -1;
+        for (Map.Entry<Integer, Integer> entry : actorCount.entrySet()) {
+            if (entry.getValue() > maxMovies) {
+                maxMovies = entry.getValue();
+                topActorId = entry.getKey();
+            }
+        }
+        if (topActorId != -1) {
+            Actors topActor = actors.get(topActorId);
+            System.out.println("Actor Who Has Worked in Most Movies:");
+            System.out.println("Name: " + topActor.name);
+            System.out.println("Total Movies: " + maxMovies);
+        } else {
+            System.out.println("No actors found.");
+        }
+    }
+
+    public static void Actorwhoistheyoungest(HashMap<Integer, Movies> movies, HashMap<Integer, Actors> actors){
+        Actors youngestActor = null;
+        for (Actors actor : actors.values()) {
+            if (youngestActor == null || actor.dateOfBirth.compareTo(youngestActor.dateOfBirth) > 0) {
+                youngestActor = actor;
+            }
+        }
+        System.out.println("Youngest Actor: " + youngestActor.name);
+        System.out.println("Birthdate: " + youngestActor.dateOfBirth);
+        System.out.println("Movies:");
+        boolean found = false;
+        for (Movies movie : movies.values()) {
+            for (int actorId : movie.actorids) {
+                if (actorId == youngestActor.actorid) {
+                    System.out.println(movie);
+                    found = true;
+                }
+            }
+        }
+        if (!found) {
+            System.out.println("No movies found for this actor.");
+        }
+    }
     public static HashMap<Integer, Movies> readMoviesCsv(String fileName) {
         HashMap<Integer, Movies> movieMap = new HashMap<>();
         InputStream inputStream = Movies.class.getClassLoader().getResourceAsStream(fileName);
