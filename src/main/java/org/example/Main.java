@@ -55,9 +55,9 @@ public class Main {
                 case 8:
                     Movies.UpdateMovieRating(movies,sc);
                     break;
-//                case 9:
-//                    DeleteaMovie(scanner);
-//                    break;
+                case 9:
+                    Movies.DeleteMovie(movies,sc);
+                    break;
 //                case 10:
 //                    moviesbythereleaseyear(scanner);
 //                    break;
@@ -70,10 +70,10 @@ public class Main {
 //                case 13:
 //                    Actorwhoistheyoungest(scanner);
 //                    break;
-//                case 14:
-//                    System.out.println("Exiting program.");
-//                    scanner.close();
-//                    System.exit(0);
+                case 14:
+                    System.out.println("Exiting program.");
+                    sc.close();
+                    System.exit(0);
                 default:
                     System.out.println("Invalid option.");
             }

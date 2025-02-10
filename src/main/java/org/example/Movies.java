@@ -172,6 +172,16 @@ class Movies {
         System.out.println("\nMovie rating updated");
     }
 
+    public static void DeleteMovie(HashMap<Integer, Movies> movies,Scanner sc){
+        System.out.println("\nEnter movie id: ");
+        int movieId=sc.nextInt();
+        if (movies.containsKey(movieId)) {
+            movies.remove(movieId);
+            System.out.println("\nMovie deleted");
+        } else {
+            System.out.println("\nMovie not found");
+        }
+    }
     public static HashMap<Integer, Movies> readMoviesCsv(String fileName) {
         HashMap<Integer, Movies> movieMap = new HashMap<>();
         InputStream inputStream = Movies.class.getClassLoader().getResourceAsStream(fileName);
