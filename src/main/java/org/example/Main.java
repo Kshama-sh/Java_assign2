@@ -40,9 +40,9 @@ public class Main {
                 case 3:
                     Movies.MoviesbyGenre(movies);
                     break;
-//                case 4:
-//                    MoviesbyDirector(scanner);
-//                    break;
+                case 4:
+                    Movies.MoviesbyDirector(movies,directors,sc);
+                    break;
 //                case 5:
 //                    MoviesbyReleaseYear(scanner);
 //                    break;

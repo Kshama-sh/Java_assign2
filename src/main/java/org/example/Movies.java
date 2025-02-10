@@ -80,6 +80,29 @@ class Movies {
         }
     }
 
+    public static void MoviesbyDirector(HashMap<Integer, Movies> movies, HashMap<Integer, Directors> directors, Scanner sc){
+        int directorId = -1;
+        System.out.print("Enter Director name: ");
+        String name = sc.nextLine().trim();
+        for (Directors director : directors.values()) {
+            if (director.name.equalsIgnoreCase(name)) {
+                directorId = director.directorid;
+                break;
+            }
+        }
+        System.out.println("\nMovies directed by " + name + ":");
+        boolean found = false;
+        for (Movies movie : movies.values()) {
+            if (movie.directorid == directorId) {
+                System.out.println(movie);
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("No movies found for this director.");
+        }
+    }
+
     public static HashMap<Integer, Movies> readMoviesCsv(String fileName) {
         HashMap<Integer, Movies> movieMap = new HashMap<>();
         InputStream inputStream = Movies.class.getClassLoader().getResourceAsStream(fileName);
